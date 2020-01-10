@@ -21,3 +21,10 @@ validates if a domain has a specific txt entry
 
 validates if a domain has a txt entry with a matching token
 
+## Intended Flow
+
+1. Generate token and hand it to the user.
+2. User adds a txt entry with the token to the domains dns settings he wants to verify.
+3. Run `hasToken` against the domain. The returned boolean will indicate if the domain has a txt entry with the correct token. The domain is now verified.
+
+**Note:** If you verify a subdomain (e.g. sub.domain.com), that does not mean that the user owns the domain domain.com. Do multiple validatations for multiple domains.
